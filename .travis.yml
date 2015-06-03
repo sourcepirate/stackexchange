@@ -1,0 +1,21 @@
+language: python
+python:
+- '2.6'
+- '2.7'
+install:
+- pip install six
+- pip install python-coveralls
+- pip install urllib3
+- pip install requests
+script: nosetests
+after_success:
+- coveralls
+deploy:
+  provider: pypi
+  user: plasmashadow
+  password:
+    secure: krmzFKwse2jH+7DphUJLo04kTfdOjI/RXDOqjXKGdKLB56Rox/yCLWfZvbeEjjVerm5nDgRBQET+Ewas5uLNsnJBL7mqhtLWgh0NeCXhHSdZBKmw0FPFDz6sec7wWthXs0kBismB7Ha9NNyNH+V1LSUKkBdOD1JLruuuBfTN/6kknpcoK/9sxVF77eyjW2UcP8Sw20RBLHywpg/Ej15nEsgl5NNGNyel2ExjL5pFjsxtBHBwEIjmbZVC8k1+ynFwvSrozfoaacvCLcAZvL5cPB+3zjKVEBUNDV6+GWR4IAM7aoUeDl2pdZ7nJ3NJhTZs8WNErL+CPiAzpDeIY6JcUyw90jlRfEiHG7LSXo8eM1il/yMtPZghOgzypcojz2LYAQlotiRZtF2klQmR3Hj+XPbhuEgaN0U3A4sKKr8boIbmMlnxAGeB3QXk/2Jqp6dlz5daukA2F3Kr/5cjdvsrYRxZjOrkwsoUwx1zsttBm9kim6lPxU59mCBx3md69mSLXxJydme2vEZUf+RRPTHfhnMbTVkGKiwV1s0xQKbb92ZuZv0fUxrvL/RrJWAnrBpdHeuRxNKNCTxXY2SHmtNI+ujsGCQpegF9ClLFQaUUSMiJVSxwcBMpz/gg2kAN79zRjwS5mu4XW7JYOYv3Lo3ldIxHWh+o/y3ekqpCYUAggPA=
+  on:
+    tags: true
+    repo: plasmashadow/stackexchange
+    branch: master
