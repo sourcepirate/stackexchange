@@ -8,7 +8,7 @@ def Readme():
 
 setup(
     name='stackexchange',
-    packages=['stackexchange', 'stackexchange/api'],
+    packages=['stackexchange', 'stackexchange/api', 'stackexchange/rest'],
     version='0.0.2',
     description='Stackexchange API for Python',
     long_description= Readme(),
