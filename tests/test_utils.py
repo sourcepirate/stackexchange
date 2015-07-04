@@ -4,7 +4,8 @@ __author__ = 'plasmashadow'
 import unittest
 import six
 
-from stackexchange.api._api_response import _transform_to_object
+from stackexchange.api._api_base import  _transform_to_object
+
 
 class TestUtils(unittest.TestCase):
 

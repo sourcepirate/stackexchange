@@ -1,7 +1,7 @@
 __author__ = 'plasmashadow'
 
 import unittest
-
+from stackexchange.api import Request
 
 
 class TestRequest(unittest.TestCase):
@@ -9,4 +9,4 @@ class TestRequest(unittest.TestCase):
     def test_request_hey(self):
         g = Request("answers", order="desc", sort="activity", site="stackoverflow")
         res = g.do()
-        self.assertEqual(res.results[0].is_accepted, False)
+        self.assertIsNotNone(res)

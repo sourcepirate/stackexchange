@@ -15,8 +15,8 @@ def _transform_to_object(item):
     for key, value in six.iteritems(item):
 
         if isinstance(value, dict):
-            custom_obj.__dict__.update({key: _transform_to_object(item)})
-        elif isinstance(value, list)
+            custom_obj.__dict__.update({key: _transform_to_object(value)})
+        elif isinstance(value, list):
             custom_obj.__dict__.update({key: value})
         else:
             custom_obj.__dict__.update({key: value})
