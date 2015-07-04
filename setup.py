@@ -9,7 +9,7 @@ def Readme():
 setup(
     name='stackexchange',
     packages=['stackexchange', 'stackexchange/api'],
-    version='0.0.1',
+    version='0.0.2',
     description='Stackexchange API for Python',
     long_description= Readme(),
     author='plasmashadow',

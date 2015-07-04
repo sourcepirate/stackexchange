@@ -20,5 +20,5 @@ class TestAnswer(unittest.TestCase):
 
     def test_get_all_comments(self):
         answer = self.answer.get_comments(self._id_to_find, site="stackoverflow")
-        print answer[0].__dict__
+        print answer
         self.assertIsNotNone(answer)
