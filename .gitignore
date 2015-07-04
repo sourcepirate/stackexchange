@@ -1,2 +1,5 @@
 .idea/
 *.pyc
+stackexchange.egg-info/
+build/
+dist/

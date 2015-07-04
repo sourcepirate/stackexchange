@@ -4,13 +4,14 @@ import os
 
 
 def Readme():
-    return open(os.path.join(os.path.dirname(__file__), 'README.rst'), "r").read()
+    return open(os.path.join(os.path.dirname(__file__), 'README.md'), "r").read()
 
 setup(
     name='stackexchange',
-    packages=['stackexchange'],
+    packages=['stackexchange', 'stackexchange/api'],
     version='0.0.1',
     description='Stackexchange API for Python',
+    long_description= Readme(),
     author='plasmashadow',
     author_email='plasmashadowx@gmail.com',
     url='https://github.com/plasmashadow/stackexchange.git',
@@ -19,7 +20,6 @@ setup(
         'Programming Language :: Python :: 2',
         'Intended Audience :: Developers'
     ],
-    install_requires = ['requests'],
-    include_package_data=True,
+    install_requires = ['requests', 'six'],
     license='MIT License',
 )
