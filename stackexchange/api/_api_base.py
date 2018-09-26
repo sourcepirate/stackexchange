@@ -4,6 +4,11 @@ import six
 import urllib
 import json
 import requests
+import sys
+if sys.version_info[0] == 3:
+    from urllib.parse import urlencode as url_encoder
+else:
+    from urllib import urlencode as url_encoder
 
 
 class _object(object):
@@ -37,7 +42,7 @@ def _construct_url(route, version, **kwargs):
     :return:
     """
     version = version or "2.2"
-    host = "https://api.stackexchange.com/"+version+"/"+route+"?"+urllib.urlencode(kwargs)
+    host = "https://api.stackexchange.com/"+version+"/"+route+"?"+ url_encoder(kwargs)
     return host
 
 def parse(func):
