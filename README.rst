@@ -12,7 +12,7 @@ Installation:
 you can install stackexchange from its official pypi repository.
 
 
-    $pip install stackexchange
+    $ pip install stackexchange
    
 
 
@@ -26,12 +26,9 @@ We can use the stackexchange search api to search in various titles
 
 
     from stackexchange import search
-
     g = search("python", site="stackoverflow", order="desc")
-
     for item in g:
        print item.title
-       # will help you to see all properties it contains
        print dir(item)
 
 
@@ -42,10 +39,8 @@ Let's look at the answer api now.
 
 
     from stackexchange import Answer
-
     a = Answer('stackoverflow')
     g = a.get_all_answer(order="desc", page=1)
-
     for item in g:
         answer_id = item.answer_id
         ans = a.get_by_id(answer_id)
@@ -59,27 +54,17 @@ questions
 On Questions api
 
 
-
     from stackexchange import Question
-
     q = Question('stackoverflow')
-
     g = q.get_all_questions(order="desc")
-
     for item in g:
         question_id = item.question_id
         ques = q.get_by_id(question_id)
-    
-    #for getting unanswered questions
-
     g = q.get_unanswered()
- 
-    #for getting featured questions
-
     g = q.get_featured()
 
 
 License
 ------------------
 
-<h4> MIT </h4>
+MIT
