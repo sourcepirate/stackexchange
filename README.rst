@@ -30,9 +30,9 @@ We can use the stackexchange search api to search in various titles
     g = search("python", site="stackoverflow", order="desc")
 
     for item in g:
-	   print item.title
-	   # will help you to see all properties it contains
-	   print dir(item)
+       print item.title
+       # will help you to see all properties it contains
+       print dir(item)
 
 
 answers
