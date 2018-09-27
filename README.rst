@@ -1,14 +1,13 @@
-##StackExchange
+StackExchange
+------------------
 
-[![Build Status](https://travis-ci.org/plasmashadow/stackexchange.svg?branch=master)](https://travis-ci.org/plasmashadow/stackexchange)
-[![PyPI version](https://badge.fury.io/py/stackexchange.svg)](http://badge.fury.io/py/stackexchange)
-[![PyPI](https://img.shields.io/pypi/dm/stackexchange.svg)](https://pypi.python.org/pypi/stackexchange)
-
-##Description
+Description
+------------------
 A Friendly wrapper for stackexchange public api used to harvest information about Questions, Answers
 and even search for questions.
 
-##Installation:
+Installation:
+------------------
 
 you can install stackexchange from its official pypi repository.
 
@@ -17,9 +16,11 @@ you can install stackexchange from its official pypi repository.
    
 ```
 
-##Usage
+Usage
+------------------
 
-###searching
+searching
+------------------
 
 We can use the stackexchange search api to search in various titles
 
@@ -36,7 +37,8 @@ for item in g:
 
 ```
 
-### answers
+answers
+------------------
 
 Let's look at the answer api now.
 
@@ -54,7 +56,8 @@ for item in g:
     print comments
 ```
 
-###questions
+questions
+------------------
 
 On Questions api
 
@@ -62,9 +65,9 @@ On Questions api
 
 from stackexchange import Question
 
-q = Question()
+q = Question('stackoverflow')
 
-g = q.get_all_questions(site="stackoverflow", order="desc")
+g = q.get_all_questions(order="desc")
 
 for item in g:
     question_id = item.question_id
@@ -81,6 +84,7 @@ g = q.get_featured()
 ```
 
 
-##License
+License
+------------------
 
 <h4> MIT </h4>

@@ -3,4 +3,4 @@
 stackexchange.egg-info/
 build/
 dist/
-test.py
+run.py

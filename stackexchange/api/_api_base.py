@@ -55,7 +55,9 @@ def parse(func):
         data = func(url, *args, **kwargs)
         data = json.loads(data)
         _results = []
-        for item in data["items"]:
+        if not data.get("items"):
+            return []
+        for item in data.get("items"):
             _results.append(_transform_to_object(item))
         return _results
     return inner
