@@ -11,13 +11,14 @@ setup(
     packages=['stackexchange', 'stackexchange/api', 'stackexchange/rest'],
     version='0.5.0',
     description='Stackexchange API for Python',
-    long_description= Readme(),
+    long_description= open('README.rst').read(),
     author='plasmashadow',
     author_email='plasmashadowx@gmail.com',
     url='https://github.com/plasmashadow/stackexchange.git',
     classifiers=[
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 3',
         'Intended Audience :: Developers'
     ],
     install_requires = ['requests', 'six'],

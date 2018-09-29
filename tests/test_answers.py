@@ -7,11 +7,11 @@ from stackexchange.rest import Answer
 class TestAnswer(unittest.TestCase):
 
     def setUp(self):
-        self.answer = Answer()
+        self.answer = Answer('stackoverflow')
         self._id_to_find = 31222238
 
     def test_get_all_answer(self):
-        answers = self.answer.get_all_answers(order="desc", sort="activity", site="stackoverflow")
+        answers = self.answer.get_all_answers(order="desc", sort="activity")
         self.assertIsNotNone(answers)
 
     def test_get_by_id(self):

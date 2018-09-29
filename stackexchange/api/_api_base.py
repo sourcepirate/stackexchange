@@ -4,6 +4,11 @@ import six
 import urllib
 import json
 import requests
+import sys
+if sys.version_info[0] == 3:
+    from urllib.parse import urlencode as url_encoder
+else:
+    from urllib import urlencode as url_encoder
 
 
 class _object(object):
@@ -37,7 +42,7 @@ def _construct_url(route, version, **kwargs):
     :return:
     """
     version = version or "2.2"
-    host = "https://api.stackexchange.com/"+version+"/"+route+"?"+urllib.urlencode(kwargs)
+    host = "https://api.stackexchange.com/"+version+"/"+route+"?"+ url_encoder(kwargs)
     return host
 
 def parse(func):
@@ -50,7 +55,9 @@ def parse(func):
         data = func(url, *args, **kwargs)
         data = json.loads(data)
         _results = []
-        for item in data["items"]:
+        if not data.get("items"):
+            return []
+        for item in data.get("items"):
             _results.append(_transform_to_object(item))
         return _results
     return inner
